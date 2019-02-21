@@ -13,6 +13,7 @@ O aplicativo vai contar com:
 
 
 O aplicativo  vai ser produzido com:
+
 *IONIC*
 
 *FIREBASE PARA AUTENTICAÇÃO*
