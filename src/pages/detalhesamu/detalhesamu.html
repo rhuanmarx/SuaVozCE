@@ -1,0 +1,55 @@
+<!--
+  Generated template for the DetalhesamuPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar color = "button">
+      
+        <ion-title>  
+            <ion-chip>
+              <ion-avatar>
+              <img src="assets/imgs/samu.jpg" >
+              </ion-avatar>
+              </ion-chip>Relato do Samu</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+   
+      
+      <h2 text-wrap><strong>{{Samu.Nome}}</strong></h2>  
+    <img src={{Samu.Foto_de_Identificacao}}>
+    <strong text-wrap> Foto do Relator</strong>
+    <p></p>
+    <h6 text-wrap><strong>Idade do Relatante:</strong></h6> 
+    <p text-wrap> {{Samu.Idade}}</p>  
+    <h6 text-wrap><strong>Telefone do Relatante:</strong></h6> 
+    <p text-wrap> {{Samu.Telefone}}</p>
+    <p></p>
+    <h2 text-wrap><strong>Detalhes da Ocorrência</strong></h2>  
+    <img src={{Samu.Foto}}>
+    <strong text-wrap> Foto do Ocorrido</strong>
+    <h6 text-wrap><strong>Data e hora da Ocorrência:</strong></h6> 
+    <p text-wrap> {{Samu.Data}} - {{Samu.Hora}} Horas</p>
+    <h6 text-wrap><strong>Endereço da Ocorrência:</strong></h6> 
+    <p text-wrap> {{Samu.Endereco_da_Ocorrencia}} - {{Samu.Bairro}}</p>
+    <h6 text-wrap><strong>Ponto de Referência:</strong></h6> 
+    <p text-wrap> {{Samu.Ponto_de_Referencia}}</p>
+    <h6 text-wrap><strong>Tipo de Ocorrência?</strong></h6> 
+     <p text-wrap> {{Samu.Tipo_de_Ocorrencia}}</p>
+     <h6 text-wrap><strong>Descrição do Ocorrido:</strong></h6> 
+     <p text-wrap> {{Samu.Descricao_da_Ocorrencia}}</p>
+     <h6 text-wrap><strong> É a Vítima?</strong></h6> 
+     <p text-wrap> {{Samu.Eu_sou_a_Vitima}}</p>
+     <h6 text-wrap><strong>Vídeo do Ocorrido: </strong></h6> 
+     <video src={{Samu.Video}}></video>
+     <!--<h6 text-wrap><strong> Audio do Ocorrido: </strong></h6> 
+     <audio src = {{Samu.Audio}}></audio>-->
+   
+  </ion-content>
+  

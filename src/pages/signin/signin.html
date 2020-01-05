@@ -1,0 +1,64 @@
+<!--
+  Generated template for the SigninPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-content padding>
+  <!-- <ion-slides pager>
+
+  <ion-slide class="slide_image">
+       <img src="assets/imgs/lola cafe.png" alt="">
+       </ion-slide>
+
+  </ion-slides>-->
+   
+    <img src="assets/imgs/SVC.png" alt="">
+    <p><button ion-button block  color="button" (click)="CreateAccount()"> <ion-icon name="contacts"></ion-icon>
+       -- Cadastro
+      </button></p>
+    
+
+
+
+ <p><button ion-button block color= "button"  (click)="signInWithEmailPage()"> <ion-icon name="contact"></ion-icon>
+   -- Entrar
+  </button></p>
+
+	<!--<form #form="ngForm" novalidate>
+    <ion-list>
+
+      <ion-item>
+        <ion-label stacked>E-mail</ion-label>
+        <ion-input type="text" name="email" [(ngModel)]="user.email" #email="ngModel" required></ion-input>
+      </ion-item>
+      <ion-item *ngIf="email.errors && (email.dirty || email.touched)" class="text-danger">
+        O campo é obrigatório
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Senha</ion-label>
+        <ion-input type="password" name="password" [(ngModel)]="user.password" #password="ngModel" required></ion-input>
+      </ion-item>
+      <ion-item *ngIf="password.errors && (password.dirty || password.touched)" class="text-danger">
+        O campo é obrigatório
+      </ion-item>
+
+      </ion-list>
+
+      	<button ion-button block color = "primary" [disabled]= "!form.form.valid" (click) = "signIn()" >Entrar</button>
+</form>
+      	<button ion-button block clear margin-top (click)="ResetPassword()">
+      		Esqueci minha Senha
+      	</button>
+      	<button ion-button block clear (click) ="CreateAccount()">
+      		Criar Conta
+        </button>-->
+      
+        <ion-fab right bottom>
+          <button ion-fab mini color= "button" (click)="Help()"><ion-icon name="help"></ion-icon></button>
+          </ion-fab>
+      </ion-content>
+      

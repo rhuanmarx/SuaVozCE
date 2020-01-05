@@ -1,0 +1,134 @@
+<ion-header>
+    <ion-navbar color="button">
+<ion-title >Mural de Relatos</ion-title>
+</ion-navbar>
+</ion-header>
+
+    <ion-content>
+        
+      <ion-searchbar   placeholder="Pesquisar Pelo Nome..." [(ngModel)]="termo"></ion-searchbar>
+        <ion-card >
+            <ion-chip>
+                  <ion-avatar>
+                  <img src="assets/imgs/policia.png" >
+                  </ion-avatar>
+                  </ion-chip> 
+                  <Strong text-wrap> Policia Militar </Strong>
+                  <h6 text-wrap>Relatos Dedicados a Policia:</h6> 
+                  <!--<button ion-button color="button" (click)="CadPol()"><ion-icon name="person-add"></ion-icon></button>-->
+                  <ion-card *ngFor="let x of Policia |  filtro : termo" (click)="selecionaPolicia(x)" >      
+                    <!--<ion-icon name="cafe"></ion-icon>-->
+                    
+                             <img src={{x.Foto}} >
+                         
+                    
+                   <h6 text-wrap><strong>{{x.Nome}}</strong></h6>
+        <h6 text-wrap><strong>{{x.Data}} - {{x.Hora}} Horas</strong></h6>   
+        <h6 text-wrap><strong>{{x.Endereco_da_Ocorrencia}}</strong> </h6> 
+      <h6 text-wrap><strong>{{x.Tipo_de_Ocorrencia}}</strong></h6> 
+         <p><strong>Mais Infromações...</strong></p>         
+         <h6><strong>    _________________________________________________   </strong></h6>
+     
+        </ion-card>
+    
+      </ion-card>
+ 
+                 
+<p></p>
+<p></p>
+                  <ion-card >
+                    <ion-chip>
+                          <ion-avatar>
+                          <img src="assets/imgs/bombeiros.jpg" >
+                          </ion-avatar>
+                          </ion-chip> 
+                          <Strong text-wrap> Corpo de Bombeiros  </Strong>
+                          <h6 text-wrap>Relatos Dedicados  aos Bombeiros:</h6>  
+                          <!--<button ion-button color="CVT" (click)="CadBomb()"><ion-icon name="person-add"></ion-icon></button>-->
+                          <ion-card *ngFor="let x of Bombeiro |  filtro : termo" (click)="selecionaBombeiro(x)" >      
+                    <!--<ion-icon name="cafe"></ion-icon>-->
+                  
+                             <img src={{x.Foto}} >
+                          
+                             <h6 text-wrap><strong>{{x.Nome}}</strong></h6>
+                             <h6 text-wrap><strong>{{x.Data}} - {{x.Hora}} Horas</strong></h6>   
+                             <h6 text-wrap><strong>{{x.Endereco_da_Ocorrencia}}</strong> </h6> 
+                           <h6 text-wrap><strong>{{x.Tipo_de_Ocorrencia}}</strong></h6> 
+         <p><strong>Mais Infromações...</strong></p>         
+         <h6><strong>    _________________________________________________   </strong></h6>
+       </ion-card>
+                          </ion-card>
+
+<p></p>
+<p></p>
+                          <ion-card >
+                            <ion-chip>
+                                  <ion-avatar>
+                                  <img src="assets/imgs/samu.jpg" >
+                                  </ion-avatar>
+                                  </ion-chip> 
+                                  <Strong text-wrap> SAMU </Strong>
+                                  <h6 text-wrap>Relatos Dedicados ao SAMU:</h6>  
+                                  <!--<button ion-button color="button" (click)="CadSam()"><ion-icon name="person-add"></ion-icon></button>-->
+                                  <ion-card *ngFor="let x of Samu |  filtro : termo " (click)="selecionaSamu(x)" >      
+                    <!--<ion-icon name="cafe"></ion-icon>-->
+                   
+     
+                             <img src={{x.Foto}} >
+                           
+                  
+                     <h6 text-wrap><strong>{{x.Nome}}</strong></h6>
+                     <h6 text-wrap><strong>{{x.Data}}- {{x.Hora}} Horas</strong></h6>   
+                     <h6 text-wrap><strong>{{x.Endereco_da_Ocorrencia}}</strong> </h6> 
+                   <h6 text-wrap><strong>{{x.Tipo_de_Ocorrencia}}</strong></h6> 
+         <p><strong>Mais Infromações...</strong></p>         
+         <h6><strong>    _________________________________________________   </strong></h6>
+       </ion-card>
+                                </ion-card>
+
+<p></p>
+<p></p>
+                                  <ion-card >
+                                    <ion-chip>
+                                          <ion-avatar>
+                                          <img src="assets/imgs/ciops.jpg" >
+                                          </ion-avatar>
+                                          </ion-chip> 
+                                          <Strong text-wrap> CIOPS </Strong>
+                                          <h6 text-wrap>Relatos Dedicados ao CIOPS:</h6>   
+                                          <!--<button ion-button  color="CVT" (click)="CadCio()"><ion-icon name="person-add"></ion-icon></button>--->  
+                                          <ion-card *ngFor="let x of Ciops | filtro : termo" (click)="selecionaCiops(x)" >      
+                    <!--<ion-icon name="cafe"></ion-icon>-->
+                 
+                             <img src={{x.Foto}} >
+                           
+                             <h6 text-wrap><strong>{{x.Nome}}</strong></h6>
+                             <h6 text-wrap><strong>{{x.Data}} - {{x.Hora}} Horas</strong></h6>   
+                             <h6 text-wrap><strong>{{x.Endereco_da_Ocorrencia}}</strong> </h6> 
+                           <h6 text-wrap><strong>{{x.Tipo_de_Ocorrencia}}</strong></h6> 
+         <p><strong>Mais Infromações...</strong></p>         
+         <h6><strong>    _________________________________________________   </strong></h6>
+       </ion-card>
+                                        </ion-card>
+       <P></P>
+       <P></P>
+       
+       
+       
+                                        <ion-fab right bottom>
+              <button ion-fab color="CVT"><ion-icon name="add-circle"></ion-icon></button>
+              <ion-fab-list side="top">
+                  <button ion-fab color="button" (click)="signOut()"><ion-icon name="power"></ion-icon></button>
+                <button ion-fab color="CVT" (click)="Telefone()"><ion-icon name="call"></ion-icon></button>
+            <button ion-fab color="button" (click)="Mapa()"><ion-icon name="locate"></ion-icon></button>
+            <button ion-fab color="CVT" (click)="TipoRelato()"><ion-icon name="person-add"></ion-icon></button>
+           
+      
+          </ion-fab-list>
+      </ion-fab>
+     
+      <!--<ion-fab left bottom>
+            <button ion-fab color="CVT" (click)="signOut()"><ion-icon name="power"></ion-icon></button>
+          </ion-fab>-->
+
+</ion-content>

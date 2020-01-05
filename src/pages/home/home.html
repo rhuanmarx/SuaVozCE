@@ -1,0 +1,91 @@
+<ion-header>
+    <ion-navbar color="button">
+<ion-title >Notícias para Você</ion-title>
+</ion-navbar>
+</ion-header>
+
+    <ion-content padding>
+      <ion-card>
+      <ion-chip>
+            <ion-avatar>
+            <img src="assets/imgs/fire.png" >
+            </ion-avatar>
+            </ion-chip> 
+            <Strong text-wrap> Top News </Strong>
+                  <h6 text-wrap>Principal Notícia do Dia</h6>     
+      <ion-card *ngFor="let x of  TopoNoticia" (click)="selecionaTopoNoticia(x)" >      
+             <!--<ion-icon name="cafe"></ion-icon>-->
+            
+                      <img src={{x.Foto}} >
+              <h2 text-wrap><strong> {{x.Titulo}}</strong></h2>
+              <ion-chip>
+              <ion-avatar>
+                <!--<img src="assets/imgs/logomini.jpg" >-->
+              <img src={{x.LogoAutor}}>  
+            </ion-avatar>
+              </ion-chip>
+  <strong text-wrap>{{x.App}} - {{x.Hora}}</strong> 
+  <p><strong>Mais Infromações...</strong></p>         
+  <h6><strong>    ____________________________________________    </strong></h6>
+</ion-card>
+</ion-card>  
+<p></p>
+         
+<ion-list>  
+          <ion-card>
+              <ion-chip>
+                <ion-avatar>
+                <img src="assets/imgs/cafe1.png" >
+                </ion-avatar>
+                </ion-chip> 
+                <Strong text-wrap> Old News </Strong>
+                <h6 text-wrap> Notícias de Outros Portais, e Destaques desta Semana</h6>
+            <ion-card *ngFor="let x of  Noticia" (click)="selecionaNoticia(x)" >      
+                <!--<ion-icon name="cafe"></ion-icon>-->
+                         <img src={{x.Foto}} alt="">
+                 <h2 text-wrap><strong> {{x.Titulo}}</strong></h2>
+                 <ion-chip>
+                    <ion-avatar>
+                      <!--<img src="assets/imgs/logomini.jpg" >-->
+                    <img src={{x.LogoAutor}}>  
+                  </ion-avatar>
+                    </ion-chip>
+     <strong text-wrap>{{x.App}} - {{x.Hora}}</strong> 
+     <p><strong>Mais Infromações...</strong></p>  
+     <h6><strong>    ____________________________________________    </strong></h6>
+    </ion-card>
+        </ion-card>
+      </ion-list> 
+
+<!--<ion-list>
+  <ion-card>
+  <ion-chip>
+        <ion-avatar>
+        <img src="assets/imgs/noticias.jpg" >
+        </ion-avatar>
+        </ion-chip> 
+        <Strong text-wrap> Outros Portais de Notícia </Strong>
+              <h6 text-wrap>Principal Notícias, de Outros Portais</h6>
+          
+        <ion-card *ngFor="let x of  OutrosPortais" (click)="selecionaOutrosPortais(x)" >      
+        
+           <img src={{x.foto}} >
+          <h2 text-wrap><strong> {{x.titulo}}</strong></h2>
+          <ion-chip>
+          <ion-avatar>
+          
+          <img src={{x.logoAutor}}>  
+        </ion-avatar>
+          </ion-chip>
+<strong text-wrap>{{x.app}} - {{x.hora}}</strong> 
+<p><strong>Mais Infromações...</strong></p>         
+<h6><strong>    ____________________________________________    </strong></h6>
+</ion-card>
+</ion-card> 
+</ion-list>
+
+<button ion-button (click) =" VideoPlay()"> Player de video</button>--> 
+
+    </ion-content>
+    
+

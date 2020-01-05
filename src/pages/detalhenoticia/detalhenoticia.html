@@ -1,0 +1,50 @@
+<!--
+  Generated template for the DetalhenoticiaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="button">
+    <ion-title> 
+      <ion-chip>
+        <ion-avatar>
+        <img src="assets/imgs/cafe1.png" >
+        </ion-avatar>
+        </ion-chip> OLD NEWS </ion-title>
+      
+  </ion-navbar>
+  <ion-fab right bottom>
+    <button  ion-fab color="button"><ion-icon name="share"></ion-icon></button>
+    <ion-fab-list side="end">
+        <button ion-fab color="MAIL" (click)="shareEmail()"><ion-icon name="mail"></ion-icon></button>
+      <button ion-fab color="FACE" (click)="shareFacebook()"><ion-icon name="logo-facebook"></ion-icon></button>
+  <button ion-fab color="TWT" (click)="shareTwitter()"><ion-icon name="logo-twitter"></ion-icon></button>
+  <button ion-fab color="ZAP" (click)="shareWhatsApp()"><ion-icon name="logo-whatsapp"></ion-icon></button>
+
+</ion-fab-list>
+</ion-fab>
+</ion-header>
+
+
+<ion-content padding>
+    <h2 text-wrap><strong>{{Noticia.Titulo}}</strong></h2>  
+    <img src={{Noticia.Foto}}> <p text-wrap> {{Noticia.Info}}</p>
+      <ion-chip>
+          <ion-avatar>
+            <!--<img src="assets/imgs/logomini.jpg" >-->
+          <img src={{Noticia.LogoAutor}}>  
+        </ion-avatar>
+     
+          </ion-chip>
+          <strong text-wrap>{{Noticia.App}}</strong>
+          <p texte-wrap>{{Noticia.Autor}} - {{Noticia.Data}}, {{Noticia.Hora}}</p>
+     <h6 text-wrap>{{Noticia.NoticiaInicio}}</h6>
+     <h6 text-wrap>{{Noticia.NoticiaMeio}}</h6>
+     <h6 text-wrap>{{Noticia.NoticiaMeio2}}</h6>
+     <h6 text-wrap>{{Noticia.NoticiaFim}}</h6>
+     <h6 text-wrap>{{Noticia.NoticiaFim2}}</h6>
+
+    
+</ion-content>

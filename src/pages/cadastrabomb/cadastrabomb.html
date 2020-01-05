@@ -1,0 +1,266 @@
+<!--
+  Generated template for the CadastrabombPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color = "button">
+    
+      <ion-title>  
+          <ion-chip>
+            <ion-avatar>
+              <img src="assets/imgs/bombeiros.jpg" >
+            </ion-avatar>
+            </ion-chip>Cadastro Bombeiros</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+    
+  <ion-card>
+        <h6 text-wrap><Strong>Foto de Identificação:</Strong></h6>   
+        <img src="{{Photo}}"/>
+        
+        <!--<ion-card-content>
+          <ion-card-title>
+            Aplicativo de Fotos
+          </ion-card-title>
+        </ion-card-content>-->
+      <ion-row>
+      <ion-col>
+        <button ion-button clear small color="button" icon-left (click)="PegaPhoto('picture')">
+          <ion-icon name='camera'></ion-icon>
+          Câmera
+        </button>
+      </ion-col>
+      <ion-col text-center>
+        <button ion-button clear small color="CVT" icon-left (click)="PegaPhoto('gallery')">
+          <ion-icon name='albums'></ion-icon>
+          Galeria
+        </button>
+      </ion-col>
+      </ion-row>
+      <p><strong> Tire a foto,ou se prefirir coloque:</strong></p>
+                       <strong><ion-label color="button"><ion-icon name="camera"></ion-icon>--Foto(Opcional): </ion-label></strong>
+                       
+                        <ion-input placeholder=" Url de Destino da mesma.. "
+                        [(ngModel)]="Bombeiros.Foto_de_Identificacao"
+                        type ="url"
+                          name = "Foto_de_Identificacao">
+                        </ion-input>
+                  
+                    <p><strong color="danger"> WARNING : A preferência de formato de Imagem é Base64.</strong>
+                      <h6><strong>    _________________________________________________  </strong></h6>
+                    </ion-card>
+                    <p></p>
+      
+                    <ion-card>
+                      <h6 text-wrap><Strong>Foto da Ocorrência:</Strong></h6>   
+                    <img src="{{currentPhoto}}"/>
+                    <!--<ion-card-content>
+                      <ion-card-title>
+                        Aplicativo de Fotos
+                      </ion-card-title>
+                    </ion-card-content>-->
+                    <ion-row>
+                    <ion-col>
+                    <button ion-button clear small color="CVT" icon-left (click)="getPhoto('picture')">
+                      <ion-icon name='camera'></ion-icon>
+                      Câmera
+                    </button>
+                    </ion-col>
+                    <ion-col text-center>
+                    <button ion-button clear small color="button" icon-left (click)="getPhoto('gallery')">
+                      <ion-icon name='albums'></ion-icon>
+                      Galeria
+                    </button>
+                    </ion-col>
+                    </ion-row>
+                    <p><strong> Tire a foto,ou se prefirir coloque:</strong></p>
+                   
+                     <strong><ion-label color="button"><ion-icon name="reverse-camera"></ion-icon>--Foto (Obrigatória)*: </ion-label></strong>
+                     
+                      <ion-input  placeholder="Url de Destino da mesma.."
+                       [(ngModel)]="Bombeiros.Foto"
+                       type= "url"
+                      name = "Foto">
+                      </ion-input>
+                      <!--<h6 *ngIf="errorFoto" class="error"> {{messageFoto}}</h6>-->
+                  
+                    <p><strong color="danger"> WARNING : A preferência de formato de Imagem é Base64.</strong>
+                      <h6><strong>    _________________________________________________  </strong></h6>
+                    </ion-card>
+                  <p></p>
+                   
+              
+                  <form (ngSubmit)="cadastraBombeiros()"> 
+                    <ion-card>
+                        <h6 text-wrap><ion-icon name="analytics"></ion-icon><Strong>--Dados de Identificação:</Strong></h6>  
+      
+                        <strong><ion-label color="button"> <ion-icon name="person"></ion-icon>--Nome(Opcional): </ion-label></strong>
+                      
+                        <ion-input placeholder="Seu Nome... " 
+                          [(ngModel)]="Bombeiros.Nome"
+                          type="text"
+                          name = "Nome">
+                        </ion-input>
+                      
+      
+                 
+                      <strong><ion-label color="button"><ion-icon name="time"></ion-icon>--Idade(Opcional): </ion-label></strong> 
+                    
+                        <ion-input placeholder="Sua Idade... " 
+                          [(ngModel)]="Bombeiros.Idade"
+                          type= "text"
+                          name = "Idade">
+                        </ion-input>
+                   
+      
+                    <!--<form  padding [FormGroup]="CadastroForm"  (Submit)="cadastraPolicia()" novalidate>-->
+                        <!--<form  [formGroup]="CadastroForm"  (ngSubmit)="cadastraPolicia()">-->
+                    
+       <strong>  <ion-label color="button"><ion-icon name="call"></ion-icon>--Telefone(Obrigatório)*: </ion-label></strong>
+                      
+                        <ion-input placeholder="Seu Telefone... " 
+                          [(ngModel)]="Bombeiros.Telefone"
+                          type="tel"
+                          name = "Telefone">
+                        </ion-input>
+                       <!-- <h6 *ngIf="errorTelefone" class="error"> {{messageTelefone}}</h6>-->
+                   
+                    <h6><strong>    _________________________________________________  </strong></h6>
+                  </ion-card>
+                <p></p>
+      
+                  <ion-card>
+                    <h6 text-wrap><ion-icon name="megaphone"></ion-icon><Strong>--Dados do Relato:</Strong></h6>  
+                        
+                    <strong><ion-label color="button"><ion-icon name="calendar"></ion-icon>--Data da Ocorrência(Obrigatória)*: </ion-label></strong>
+                    <!--<ion-datetime cancelText="Cancelar" doneText="Aplicar" placeholder=" Data da Ocorrência... " 
+                    displayFormat="DD/MM/YYYY" pickerFormat="DD MMM YYYY"  min="2019-01-31" max="2019-12-31"   [(ngModel)]="Bombeiros.Data"
+                    name = "Data"></ion-datetime>-->
+                   <ion-input placeholder=" Data da Ocorrência.. " 
+                          [(ngModel)]="Bombeiros.Data"
+                      type="tel" 
+                         name = "Data">
+                    </ion-input>
+                      <!--<h6 *ngIf="errorData_e_Hora" class="error"> {{messageData_e_Hora}}</h6>-->
+                  
+                      <strong><ion-label color="button"><ion-icon name="clock"></ion-icon>>--Horário da Ocorrência(Obrigatório)*: </ion-label></strong>
+                     <!--<ion-datetime cancelText="Cancelar" doneText="Aplicar" placeholder=" Horário da Ocorrência.. "
+                     displayFormat="HH:mm"  min="00:00" max="24:59"   [(ngModel)]="Bombeiros.Hora"
+                      name = "Hora"></ion-datetime>-->
+                    <ion-input placeholder="Horário da Ocorrência.. " 
+                        [(ngModel)]="Bombeiros.Hora"
+                    type="text" 
+                       name = "Hora">
+                 </ion-input>
+                    
+                        <strong><ion-label color="button"><ion-icon name="pin"></ion-icon>--Endereço da Ocorrência(Obrigatório)*: </ion-label></strong>
+                     
+                        <ion-input placeholder="Informe o Endereço... " 
+                          [(ngModel)]="Bombeiros.Endereco_da_Ocorrencia"
+                          type="text"
+                      name = "Endereco_da_Ocorrencia">
+                        </ion-input>
+                      <!--<h6 *ngIf="errorEndereco_da_Ocorrencia" class="error"> {{messageEndereco_da_Ocorrencia}}</h6>-->
+                 
+            
+                   
+                       <strong> <ion-label color="button"><ion-icon name="pin"></ion-icon>--Bairro(Obrigatório)*: </ion-label></strong>
+                       
+                        <ion-input placeholder="Informe o Bairro... " 
+                          [(ngModel)]="Bombeiros.Bairro"
+                          type="text"
+                        name = "Bairro">
+                        </ion-input>
+                        <!--<h6 *ngIf="errorBairro" class="error"> {{messageBairro}}</h6>-->
+                  
+      
+                          
+                   
+                        <strong><ion-label color="button"><ion-icon name="compass"></ion-icon>--Ponto de Referência(Obrigatório)*: </ion-label></strong>
+                       
+                        <ion-input placeholder="Informe Um Ponto de Referência... " 
+                          [(ngModel)]="Bombeiros.Ponto_de_Referencia"
+                          type="text"
+                          name = "Ponto_de_Referencia">
+                        </ion-input>
+                        <!--<h6 *ngIf="errorPonto_de_Referencia" class="error"> {{messagePonto_de_Referencia}}</h6>-->
+                       
+                        <strong><ion-label item item-input item-select color="button"><ion-icon name="checkmark-circle"></ion-icon>--Tipo de Ocorrência(Obrigatório)*: </ion-label></strong>
+                        
+                        <select  placeholder="Tipo de Ocorrências" cancelText="Cancelar" okText="Aplicar" required interface="popover"  
+                        [(ngModel)]="Bombeiros.Tipo_de_Ocorrencia" name = " Tipo_de_Ocorrencia">
+                        <option value="Queimada">Queimada</option>
+                        <option value="QueimaduraPropositao">Queimadura Proposital</option>
+                        <option value="Incêndio">Incêndio</option>
+                        <option value="IncêndioProposital">Incêndio Proposital</option>
+                        <option value="Atentado">Atentado</option>
+                        <option value="AmeaçaBomba">Ameaça de Bomba</option>
+                        <option value="Afogamento"> Afogamento </option>
+                        </select>
+
+                        <!--<ion-select  placeholder="Tipo de Ocorrências" cancelText="Cancelar" okText="Aplicar" required interface="popover"  
+                        [(ngModel)]="Bombeiros.Tipo_de_Ocorrencia" name = " Tipo_de_Ocorrencia">
+                        <ion-option value="Queimada">Queimada</ion-option>
+                        <ion-option value="QueimaduraPropositao">Queimadura Proposital</ion-option>
+                        <ion-option value="Incêndio">Incêndio</ion-option>
+                        <ion-option value="IncêndioProposital">Incêndio Proposital</ion-option>
+                        <ion-option value="Atentado">Atentado</ion-option>
+                        <ion-option value="AmeaçaBomba">Ameaça de Bomba</ion-option>
+                        <ion-option value="Afogamento"> Afogamento </ion-option>
+                        </ion-select>-->
+      
+                       <!-- <ion-input placeholder="Informe o Tipo de Ocorrência " 
+                          [(ngModel)]="Policia.Tipo_de_Ocorrencia"
+                          type="text"
+                          name = " Tipo_de_Ocorrencia">
+                        </ion-input>-->
+      
+      
+                        <strong><ion-label color="button"><ion-icon name="create"></ion-icon>--Descrição da Ocorrência(Obrigatório)*: </ion-label></strong>
+                        <ion-textarea placeholder="Informe a Descricao da Ocorrência.. " 
+                        [(ngModel)]="Bombeiros.Descricao_da_Ocorrencia"
+                        name = " Descricao_da_Ocorrencia"></ion-textarea>
+                       <!-- <ion-input placeholder="Informe a Descricao da Ocorrência.. " 
+                          [(ngModel)]="Policia.Descricao_da_Ocorrencia"
+                          type="text"
+                          name = " Descricao_da_Ocorrencia">
+                        </ion-input>-->
+                       <!-- <h6 *ngIf="errorDescricao_da_Ocorrencia" class="error"> {{messageDescricao_da_Ocorrencia}}</h6>-->
+                   
+                  
+                  
+                        <strong><ion-label color="button"><ion-icon name="eye"></ion-icon>--Você é a Vítima?(Obrigatório)*: </ion-label></strong>
+                        <select placeholder="É a Vítima? " cancelText="Cancelar" okText="Aplicar"  required interface="popover"  [(ngModel)]="Bombeiros.Eu_sou_a_Vitima"
+                        name = " Eu_sou_a_Vitima">
+                          <option value="Sim">Sim</option>
+                          <option value="Não">Não</option>
+                        </select>
+                        <!--<ion-select placeholder="É a Vítima? " cancelText="Cancelar" okText="Aplicar"  required interface="popover"  [(ngModel)]="Bombeiros.Eu_sou_a_Vitima"
+                        name = " Eu_sou_a_Vitima">
+                          <ion-option value="Sim">Sim</ion-option>
+                          <ion-option value="Não">Não</ion-option>
+                        </ion-select>-->
+                        <!--<ion-input placeholder="Você é a Vítima? " 
+                        
+                          [(ngModel)]="Policia.Eu_sou_a_Vitima"
+                          type="text"
+                          name = "Eu_sou_a_Vitima">
+                        </ion-input>-->
+                       <!-- <h6 *ngIf="errorEu_sou_a_Vitima" class="error"> {{messageEu_sou_a_Vitima}}</h6>-->
+                      </ion-card>
+                   
+                     
+                          <button ion-button block type="submit" color="button"><ion-icon name="person-add"></ion-icon></button>   
+                    
+                  <!--</form>-->
+         
+      </form>
+
+</ion-content>

@@ -1,0 +1,54 @@
+<!--
+  Generated template for the DetalheciopsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar color = "button">
+      
+        <ion-title>  
+            <ion-chip>
+              <ion-avatar>
+              <img src="assets/imgs/ciops.jpg" >
+              </ion-avatar>
+              </ion-chip>Relato do Ciops</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+   
+      
+      <h2 text-wrap><strong>{{Ciops.Nome}}</strong></h2>  
+    <img src={{Ciops.Foto_de_Identificacao}}>
+    <strong text-wrap> Foto do Relator</strong>
+    <p></p>
+    <h6 text-wrap><strong>Idade do Relatante:</strong></h6> 
+    <p text-wrap> {{Ciops.Idade}}</p>  
+    <h6 text-wrap><strong>Telefone do Relatante:</strong></h6> 
+    <p text-wrap> {{Ciops.Telefone}}</p>
+    <p></p>
+    <h2 text-wrap><strong>Detalhes da Ocorrência</strong></h2>  
+    <img src={{Ciops.Foto}}>
+    <strong text-wrap> Foto do Ocorrido</strong>
+    <h6 text-wrap><strong>Data e hora da Ocorrência:</strong></h6> 
+    <p text-wrap> {{Ciops.Data}} - {{Ciops.Hora}} Horas</p>
+    <h6 text-wrap><strong>Endereço da Ocorrência:</strong></h6> 
+    <p text-wrap> {{Ciops.Endereco_da_Ocorrencia}} - {{Ciops.Bairro}}</p>
+    <h6 text-wrap><strong>Ponto de Referência:</strong></h6> 
+    <p text-wrap> {{Ciops.Ponto_de_Referencia}}</p>
+    <h6 text-wrap><strong>Tipo de Ocorrência?</strong></h6> 
+     <p text-wrap> {{Ciops.Tipo_de_Ocorrencia}}</p>
+     <h6 text-wrap><strong>Descrição do Ocorrido:</strong></h6> 
+     <p text-wrap> {{Ciops.Descricao_da_Ocorrencia}}</p>
+     <h6 text-wrap><strong> É a Vítima?</strong></h6> 
+     <p text-wrap> {{Ciops.Eu_sou_a_Vitima}}</p>
+     <h6 text-wrap><strong>Vídeo do Ocorrido: </strong></h6> 
+     <video src={{Ciops.Video}}></video>
+     <!--<h6 text-wrap><strong> Audio do Ocorrido: </strong></h6> 
+     <audio src = {{Ciops.Audio}}></audio>-->
+   
+  </ion-content>

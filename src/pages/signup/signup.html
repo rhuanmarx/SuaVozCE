@@ -1,0 +1,44 @@
+
+
+<ion-header>
+    <ion-navbar color="button">
+      <ion-title>
+        Vai criar uma Conta?
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content padding>
+  
+        <img src="assets/imgs/SVC.png" alt="">  
+<form #form="ngForm" novalidate>
+  <ion-list>
+<ion-card>
+    <ion-item>
+      <ion-label stacked color='button'>Email:</ion-label>
+      <ion-input type="text" name="button" [(ngModel)]="user.email" #email="ngModel" required>  <ion-icon name="at"></ion-icon></ion-input>
+    </ion-item>
+    <ion-item *ngIf="email.errors && (email.dirty || email.touched)" class="text-danger">
+        <ion-icon name="mail"></ion-icon>
+      O campo é obrigatório
+    </ion-item>
+</ion-card>
+<ion-card>
+    <ion-item>
+      <ion-label stacked color='button'>Senha:</ion-label>
+      <ion-input type="password" name="password" [(ngModel)]="user.password" #password="ngModel" required>  <ion-icon name="unlock"></ion-icon></ion-input>
+    </ion-item>
+    <ion-item *ngIf="password.errors && (password.dirty || password.touched)" class="text-danger">
+        <ion-icon name="unlock"></ion-icon>
+      O campo é obrigatório
+    </ion-item>
+</ion-card>
+  </ion-list>
+
+  <button ion-button block color="button" [disabled]="!form.form.valid" (click)="CreateAccount()"><ion-icon name="checkmark-circle"></ion-icon>
+    -- Criar conta
+  </button>
+</form>
+
+</ion-content>
+

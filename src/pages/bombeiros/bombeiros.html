@@ -1,0 +1,40 @@
+<!--
+  Generated template for the BombeirosPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar color = "button">
+      
+        <ion-title>  
+            <ion-chip>
+              <ion-avatar>
+                  <img src="assets/imgs/bombeiro.png" >
+              </ion-avatar>
+              </ion-chip>Localidades Bombeiros</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+
+
+<ion-content>
+  
+  <ion-searchbar   placeholder="Pesquisar Pelo Nome..." [(ngModel)]="termo"></ion-searchbar>
+  <ion-card *ngFor="let local of locais | filtro : termo">
+    <div>
+      <img src="{{ local.mapa }}">
+    </div>
+    <ion-item>
+      <ion-label>
+        <h2 text-wrap><strong>{{ local.Nome }}</strong></h2>
+      <p text-wrap>{{local.Bairro}} - {{local.cidade}} - {{local.cep}}</p>
+      <strong text-wrap>{{local.telefone}}</strong>
+      <button ion-button full color="button" (click)="Call()"><ion-icon name="call"></ion-icon></button>  
+      </ion-label>
+    </ion-item>
+   
+  </ion-card>
+
+</ion-content>
